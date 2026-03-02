@@ -3,3 +3,4 @@
 
 - deployer PR test OK
 - T-012 e2e OK
+- T-030 onepush OK
