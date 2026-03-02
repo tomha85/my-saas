@@ -16,5 +16,15 @@ def login():
         return jsonify({'ok': True, 'token': 'demo'})
     return jsonify({'ok': False}), 401
 
+@app.route('/signup', methods=['POST'])
+def signup():
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
+    # Mock signup process
+    if email and password:
+        return jsonify({'ok': True})
+    return jsonify({'ok': False}), 400
+
 if __name__ == '__main__':
     app.run(debug=True)
