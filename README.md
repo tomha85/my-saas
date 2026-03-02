@@ -1,6 +1,1 @@
-
-Factory POC OK
-
-Factory POC OK
-
-Factory POC OK (feature branch)
+# How to Run the Flask App\n\n1. Create a virtual environment:\n   ```bash\n   python3 -m venv venv\n   ```\n2. Activate the virtual environment:\n   ```bash\n   source venv/bin/activate\n   ```\n3. Install dependencies:\n   ```bash\n   pip install -r requirements.txt\n   ```\n4. Run the app:\n   ```bash\n   flask run\n   ```\n5. Test the app:\n   ```bash\n   pytest\n   ```\n

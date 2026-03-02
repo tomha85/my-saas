@@ -1,0 +1,1 @@
+import pytest\nfrom app.main import app\n\n@pytest.fixture\ndef client():\n    with app.test_client() as client:\n        yield client\n\ndef test_health(client):\n    response = client.get('/health')\n    assert response.json == {'status': 'ok'}\n
