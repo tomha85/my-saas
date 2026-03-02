@@ -1,1 +1,13 @@
-import pytest\nfrom app.main import app\n\n@pytest.fixture\ndef client():\n    with app.test_client() as client:\n        yield client\n\ndef test_health(client):\n    response = client.get('/health')\n    assert response.json == {'status': 'ok'}\n
+import pytest
+from app import app
+
+@pytest.fixture
+def client():
+    with app.test_client() as client:
+        yield client
+
+
+def test_health(client):
+    response = client.get('/health')
+    assert response.json == {'status': 'ok'}
+    assert response.status_code == 200

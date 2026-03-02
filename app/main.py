@@ -1,1 +1,6 @@
-from flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/health', methods=['GET'])\ndef health():\n    return {'status': 'ok'}\n
+from flask import jsonify
+from app import app
+
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify(status='ok')
