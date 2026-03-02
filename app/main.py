@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import jsonify
+from app import app
+from time import time
 
-app = Flask(__name__)
+# Store the start time of the application
+start_time = time()
 
-@app.route('/health')
-def health():
-    return {'ok': True}
-
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/uptime', methods=['GET'])
+def uptime():
+    uptime_seconds = int(time() - start_time)
+    return jsonify(uptime_seconds=uptime_seconds)
