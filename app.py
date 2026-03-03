@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# In-memory user data
+# In-memory storage for users
 users = [{'username': 'demo', 'password': 'demo'}]
 
 def validate_credentials(username, password):
