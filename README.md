@@ -1,8 +1,10 @@
-# Project Title
+# API Version
 
-This is a short description of the project.
+## GET /version
 
-## API Endpoints
+Returns the current version of the API.
 
-### GET /version
-- Returns the version of the API.
+### Response
+```json
+{"version":"0.1.0"}
+```
