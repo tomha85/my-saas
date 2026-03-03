@@ -18,7 +18,7 @@ def test_create_todo(client):
     assert json_data['title'] == 'Test Todo'
     assert json_data['done'] is False
 
-def test_list_todos(client):
+def test_list_todos(test_client):
     from tests.test_client import client
     from tests.test_client import client
     client.post('/todos', json={'title': 'Todo 1'})
