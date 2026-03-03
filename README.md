@@ -1,38 +1,24 @@
-## POST /login
+# My SaaS
 
-### Description
-- Login endpoint that returns a token.
+This project provides a simple API to retrieve the version of the application.
 
-### Example Request
-```http
-POST /login HTTP/1.1
-Content-Type: application/json
-{
-    "username": "your_username",
-    "password": "your_password"
-}
+## Endpoints
+
+### GET /version
+
+Returns the current version of the application as a JSON response.
+
+### Running the Application
+
+To run the application, use:
+
+```
+python version.py
 ```
 
-### Response
-```json
-{
-    "token": "your_generated_token_here"
-}
+### Testing
+To run the tests, use pytest:
+
 ```
-
-## GET /version
-
-### Description
-- Returns the current version of the API.
-
-### Example Request
-```http
-GET /version HTTP/1.1
-```
-
-### Response
-```json
-{
-    "version": "1.0.0"
-}
+pytest test_version.py
 ```
