@@ -1,15 +1,13 @@
-## ME Endpoint
+# API Overview
 
-- Endpoint: `/me`
-- Method: `POST`
-- **Authorization**: Requires Bearer token in the header.
-- Returns JSON: `{"message": "Authorized access"}` on success or `{"error": "Unauthorized"}` on failure.
+## Authorization
+- **Authorization**: Bearer token required for all requests.
 
-### Run Steps
-1. Install requirements: `pip install -r requirements.txt`
-2. Run the app: `flask run`
-3. Run tests: `pytest`
+### Example Request
+```http
+POST /me HTTP/1.1
+Authorization: Bearer YOUR_TOKEN_HERE
+```
 
-### Test Steps
-- Authorized Access: `curl -X POST http://localhost:5000/me -H "Authorization: Bearer valid_token"`
-- Unauthorized Access: `curl -X POST http://localhost:5000/me`
+### Response
+- Returns user details and status.
