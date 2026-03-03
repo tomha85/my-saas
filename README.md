@@ -8,3 +8,5 @@ Returns the current version of the API.
 ```json
 {"version":"0.1.0"}
 ```
+
+E2E3 pipeline test.
