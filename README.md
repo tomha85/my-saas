@@ -1,40 +1,24 @@
-## POST /todos
+## GET /me
 
 ### Description
-- Creates a new todo item.
+- Returns user information if authorized with a Bearer token.
 
 ### Example Request
 ```http
-POST /todos HTTP/1.1
-Content-Type: application/json
-{
-    "task": "Your task description"
-}
+GET /me HTTP/1.1
+Authorization: Bearer demo
 ```
 
 ### Response
 ```json
 {
-    "id": <int>,
-    "task": "Your task description"
+    "username": "demo"
 }
 ```
 
-## GET /todos
-
-### Description
-- Returns a list of all todo items.
-
-### Example Request
-```http
-GET /todos HTTP/1.1
-```
-
-### Response
+### Unauthorized Response
 ```json
-[
-    {
-        "id": 1,
-        "task": "Your task description"
-    }
-]
+{
+    "error": "Unauthorized"
+}
+```

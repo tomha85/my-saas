@@ -2,16 +2,12 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# In-memory storage for todos
-todos = []
+# In-memory data for users
+users = [{'username': 'demo', 'password': 'demo'}]
 
-@app.route('/todos', methods=['POST'])
-def create_todo():
-    data = request.get_json()
-    todo = {'id': len(todos) + 1, 'task': data['task']}
-    todos.append(todo)
-    return jsonify(todo), 201
-
-@app.route('/todos', methods=['GET'])
-def get_todos():
-    return jsonify(todos)
+@app.route('/me', methods=['GET'])
+def get_me():
+    auth_header = request.headers.get('Authorization')
+    if auth_header != 'Bearer demo':
+        return jsonify({'error': 'Unauthorized'}), 401
+    return jsonify({'username': 'demo'})
