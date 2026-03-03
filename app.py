@@ -1,18 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+import json
 
 app = Flask(__name__)
 
-# Global variable to store request counts
-request_counts = {}
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    # Simulate token creation upon successful login
+    return jsonify(token="your_generated_token_here"), 200
 
-@app.route('/<path:path>', methods=['GET', 'POST'])
-def catch_all(path):
-    # Increment request count for the route
-    if path not in request_counts:
-        request_counts[path] = 0
-    request_counts[path] += 1
-    return jsonify(success=True)
-
-@app.route('/metrics', methods=['GET'])
-def metrics():
-    return jsonify(routes=request_counts)
+@app.route('/version', methods=['GET'])
+def version():
+    return jsonify(version="1.0.0")
