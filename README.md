@@ -1,16 +1,18 @@
-## GET /version
+## GET /metrics
 
 ### Description
-- Returns the current version of the application.
+- Returns the count of requests made to each route.
 
 ### Example Request
 ```http
-GET /version HTTP/1.1
+GET /metrics HTTP/1.1
 ```
 
 ### Response
 ```json
 {
-    "version": "0.1.0"
+    "routes": {
+        "<route>": <count>
+    }
 }
 ```
