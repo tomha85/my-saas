@@ -1,12 +1,3 @@
-import pytest
-from app import app
-
-@pytest.fixture
-def client():
-    with app.test_client() as client:
-        yield client
-
-
 def test_me_authorized(client):
     response = client.post('/me', headers={'Authorization': 'Bearer valid_token'})
     assert response.status_code == 200

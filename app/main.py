@@ -1,6 +1,3 @@
-from flask import jsonify, request
-from app import app
-
 @app.route('/me', methods=['POST'])
 def me():
     auth_header = request.headers.get('Authorization')
