@@ -1,12 +1,16 @@
-## GET /metrics
+## GET /uptime
 
 ### Description
-- Returns the count of requests made to each route.
+- Returns the uptime of the service in seconds.
 
 ### Example Request
 ```http
-GET /metrics HTTP/1.1
+GET /uptime HTTP/1.1
 ```
 
 ### Response
-- Returns a JSON object with request counts per route.
+```json
+{
+    "uptime_seconds": <int>
+}
+```
