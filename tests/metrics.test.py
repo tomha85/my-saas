@@ -3,6 +3,7 @@ import pytest
 
 BASE_URL = 'http://localhost:5000'  # Update accordingly
 
+
 def test_metrics():
     # Making a sample request to increment count
     requests.post(f'{BASE_URL}/sample-route')
