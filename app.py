@@ -14,4 +14,4 @@ def login():
     data = request.get_json()
     if validate_credentials(data['username'], data['password']):
         return jsonify(token="your_generated_token_here"), 200
-    return jsonify({'ok': false}), 401
+    return jsonify({'ok': False}), 401
