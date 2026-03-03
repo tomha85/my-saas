@@ -7,7 +7,7 @@ def client():
         yield client
 
 
-def test_health(client):
+def test_health(test_client):
     response = client.get('/health')
     assert response.json == {'ok': True}
     assert response.status_code == 200
