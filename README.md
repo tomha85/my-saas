@@ -1,8 +1,8 @@
-## Uptime Endpoint
+## Health Endpoint
 
-- Endpoint: `/uptime`
+- Endpoint: `/health`
 - Method: `GET`
-- Returns JSON in the format: `{"uptime_seconds": <int>}`
+- Returns JSON in the format: `{"ok": true, "version": "0.1.0"}`
 
 ### Run Steps
 1. Install requirements: `pip install -r requirements.txt`
@@ -10,4 +10,4 @@
 3. Run tests: `pytest`
 
 ### Test Steps
-- Check uptime: `curl http://localhost:5000/uptime`
+- Check health: `curl http://localhost:5000/health`
