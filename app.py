@@ -1,14 +1,17 @@
 from flask import Flask, jsonify, request
-import json
 
 app = Flask(__name__)
 
-@app.route('/login', methods=['POST'])
-def login():
-    data = request.get_json()
-    # Simulate token creation upon successful login
-    return jsonify(token="your_generated_token_here"), 200
+# In-memory storage for todos
+todos = []
 
-@app.route('/version', methods=['GET'])
-def version():
-    return jsonify(version="1.0.0")
+@app.route('/todos', methods=['POST'])
+def create_todo():
+    data = request.get_json()
+    todo = {'id': len(todos) + 1, 'task': data['task']}
+    todos.append(todo)
+    return jsonify(todo), 201
+
+@app.route('/todos', methods=['GET'])
+def get_todos():
+    return jsonify(todos)

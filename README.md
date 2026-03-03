@@ -1,38 +1,40 @@
-## POST /login
+## POST /todos
 
 ### Description
-- Login endpoint that returns a token.
+- Creates a new todo item.
 
 ### Example Request
 ```http
-POST /login HTTP/1.1
+POST /todos HTTP/1.1
 Content-Type: application/json
 {
-    "username": "your_username",
-    "password": "your_password"
+    "task": "Your task description"
 }
 ```
 
 ### Response
 ```json
 {
-    "token": "your_generated_token_here"
+    "id": <int>,
+    "task": "Your task description"
 }
 ```
 
-## GET /version
+## GET /todos
 
 ### Description
-- Returns the current version of the API.
+- Returns a list of all todo items.
 
 ### Example Request
 ```http
-GET /version HTTP/1.1
+GET /todos HTTP/1.1
 ```
 
 ### Response
 ```json
-{
-    "version": "1.0.0"
-}
-```
+[
+    {
+        "id": 1,
+        "task": "Your task description"
+    }
+]
