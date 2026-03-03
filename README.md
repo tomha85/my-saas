@@ -1,29 +1,16 @@
-## POST /login
+## GET /version
 
 ### Description
-- Authenticates a user and returns a JSON Web Token.
+- Returns the current version of the application.
 
 ### Example Request
 ```http
-POST /login HTTP/1.1
-Content-Type: application/json
-{
-    "username": "demo",
-    "password": "demo"
-}
+GET /version HTTP/1.1
 ```
 
 ### Response
 ```json
 {
-    "ok": true,
-    "token": "demo"
-}
-```
-
-### Unauthorized Response
-```json
-{
-    "ok": false
+    "version": "0.1.0"
 }
 ```
