@@ -1,13 +1,12 @@
-# API Overview
+## GET /metrics
 
-## Authorization
-- **Authorization**: Bearer token required for all requests.
+### Description
+- Returns the count of requests made to each route.
 
 ### Example Request
 ```http
-POST /me HTTP/1.1
-Authorization: Bearer YOUR_TOKEN_HERE
+GET /metrics HTTP/1.1
 ```
 
 ### Response
-- Returns user details and status.
+- Returns a JSON object with request counts per route.
