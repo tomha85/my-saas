@@ -6,9 +6,9 @@ def login():
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
-    if username and password:
+    if username == "demo" and password == "pass":
         return jsonify(ok=True, token="demo")
-    return jsonify(ok=False), 400
+    return jsonify(ok=False), 401
 
 @app.route('/health', methods=['GET'])
 def health():
