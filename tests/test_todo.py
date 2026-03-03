@@ -19,6 +19,8 @@ def test_create_todo(client):
     assert json_data['done'] is False
 
 def test_list_todos(client):
+    from tests.test_client import client
+    from tests.test_client import client
     client.post('/todos', json={'title': 'Todo 1'})
     client.post('/todos', json={'title': 'Todo 2'})
     response = client.get('/todos')
@@ -26,6 +28,8 @@ def test_list_todos(client):
     assert len(json.loads(response.data)) == 2
 
 def test_reset_todos(client):
+    from tests.test_client import client
+    from tests.test_client import client
     client.post('/todos', json={'title': 'Todo 1'})
     response = client.post('/reset')
     assert response.status_code == 200

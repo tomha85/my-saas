@@ -1,24 +1,8 @@
-# My SaaS
+# Project Title
 
-This project provides a simple API to retrieve the version of the application.
+This is a short description of the project.
 
-## Endpoints
+## API Endpoints
 
 ### GET /version
-
-Returns the current version of the application as a JSON response.
-
-### Running the Application
-
-To run the application, use:
-
-```
-python version.py
-```
-
-### Testing
-To run the tests, use pytest:
-
-```
-pytest test_version.py
-```
+- Returns the version of the API.
