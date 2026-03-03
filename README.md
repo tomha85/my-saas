@@ -1,29 +1,38 @@
-# Flask Authentication API
+## POST /login
 
-## Overview
-This is a simple Flask application with health check and login endpoints.
+### Description
+- Login endpoint that returns a token.
 
-## Endpoints
-- **GET /health**: Returns the health status of the API.
-- **POST /login**: Accepts a JSON body containing username and password.
-
-## Run
-To run the application:
-```
-flask run
-```
-
-## Test
-To run tests:
-```
-pytest
+### Example Request
+```http
+POST /login HTTP/1.1
+Content-Type: application/json
+{
+    "username": "your_username",
+    "password": "your_password"
+}
 ```
 
-## Project Structure
+### Response
+```json
+{
+    "token": "your_generated_token_here"
+}
 ```
-my-saas/
-├── app/
-│   ├── auth.py
-├── tests/
-│   └── test_auth.py
-└── README.md
+
+## GET /version
+
+### Description
+- Returns the current version of the API.
+
+### Example Request
+```http
+GET /version HTTP/1.1
+```
+
+### Response
+```json
+{
+    "version": "1.0.0"
+}
+```

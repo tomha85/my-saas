@@ -1,10 +1,9 @@
-from flask import Flask
+from flask import jsonify, request
+from app import app
 
-app = Flask(__name__)
-
-@app.route('/health')
-def health():
-    return {'ok': True}
-
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/me', methods=['POST'])
+def me():
+    auth_header = request.headers.get('Authorization')
+    if auth_header and auth_header.startswith('Bearer '):
+        return jsonify(message="Authorized access"), 200
+    return jsonify(error="Unauthorized"), 401

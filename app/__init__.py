@@ -1,1 +1,6 @@
-# Stub for app module to avoid import errors.
+from flask import Flask
+
+app = Flask(__name__)
+
+# Import routes
+from app import main
