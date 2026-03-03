@@ -1,24 +1,17 @@
-## GET /me
+## GET /health
 
 ### Description
-- Returns user information if authorized with a Bearer token.
+- Returns the health status of the application.
 
 ### Example Request
 ```http
-GET /me HTTP/1.1
-Authorization: Bearer demo
+GET /health HTTP/1.1
 ```
 
 ### Response
 ```json
 {
-    "username": "demo"
-}
-```
-
-### Unauthorized Response
-```json
-{
-    "error": "Unauthorized"
+    "ok": true,
+    "version": "0.1.0"
 }
 ```

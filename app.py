@@ -1,16 +1,7 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-# In-memory storage for users
-users = [{'username': 'demo', 'password': 'demo'}]
-
-def validate_credentials(username, password):
-    return any(user['username'] == username and user['password'] == password for user in users)
-
-@app.route('/login', methods=['POST'])
-def login():
-    data = request.get_json()
-    if validate_credentials(data['username'], data['password']):
-        return jsonify(token="your_generated_token_here"), 200
-    return jsonify({'ok': False}), 401
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify(ok=True, version="0.1.0")
