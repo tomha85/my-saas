@@ -1,8 +1,9 @@
-## Health Endpoint
+## Login Endpoint
 
-- Endpoint: `/health`
-- Method: `GET`
-- Returns JSON in the format: `{"ok": true, "version": "0.1.0"}`
+- Endpoint: `/login`
+- Method: `POST`
+- Request JSON format: `{"username": "<your_username>", "password": "<your_password>"}`
+- Returns JSON: `{"ok": true, "token": "demo"}` on success, or `{"ok": false}` on failure.
 
 ### Run Steps
 1. Install requirements: `pip install -r requirements.txt`
@@ -10,4 +11,4 @@
 3. Run tests: `pytest`
 
 ### Test Steps
-- Check health: `curl http://localhost:5000/health`
+- Login: `curl -X POST http://localhost:5000/login -H "Content-Type: application/json" -d '{"username": "test", "password": "pass"}'`

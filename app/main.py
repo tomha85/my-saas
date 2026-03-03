@@ -1,5 +1,14 @@
-from flask import jsonify
+from flask import jsonify, request
 from app import app
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    if username and password:
+        return jsonify(ok=True, token="demo")
+    return jsonify(ok=False), 400
 
 @app.route('/health', methods=['GET'])
 def health():
