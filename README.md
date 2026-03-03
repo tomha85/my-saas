@@ -1,4 +1,4 @@
-# Flask Health Check App
+# Simple Flask Health Check App
 
 ## Overview
 This is a simple Flask application that provides a health check endpoint.
