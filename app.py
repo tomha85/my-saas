@@ -2,11 +2,11 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# In-memory storage for users
+# In-memory user data
 users = [{'username': 'demo', 'password': 'demo'}]
 
 def validate_credentials(username, password):
-    return any(user for user in users if user['username'] == username and user['password'] == password)  
+    return any(user['username'] == username and user['password'] == password for user in users)
 
 @app.route('/login', methods=['POST'])
 def login():
