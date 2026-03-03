@@ -1,17 +1,29 @@
-## GET /health
+## POST /login
 
 ### Description
-- Returns the health status of the application.
+- Authenticates a user and returns a JSON Web Token.
 
 ### Example Request
 ```http
-GET /health HTTP/1.1
+POST /login HTTP/1.1
+Content-Type: application/json
+{
+    "username": "demo",
+    "password": "demo"
+}
 ```
 
 ### Response
 ```json
 {
     "ok": true,
-    "version": "0.1.0"
+    "token": "demo"
+}
+```
+
+### Unauthorized Response
+```json
+{
+    "ok": false
 }
 ```

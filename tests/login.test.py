@@ -7,7 +7,8 @@ def test_login_valid():
     response = requests.post(f'{BASE_URL}/login', json={"username": "demo", "password": "demo"})
     assert response.status_code == 200
     data = response.json()
-    assert 'token' in data
+    assert data['ok'] is True
+    assert data['token'] == "demo"
 
 
 def test_login_invalid():
