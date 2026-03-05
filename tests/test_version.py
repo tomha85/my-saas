@@ -1,7 +1,7 @@
 import requests
 import pytest
 
-BASE_URL = 'http://localhost:5000'  # Adjust accordingly
+BASE_URL = 'http://localhost:5000'  # Update accordingly
 
 def test_version():
     response = requests.get(f'{BASE_URL}/version')
