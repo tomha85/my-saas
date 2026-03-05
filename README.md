@@ -1,16 +1,12 @@
+# API Documentation
+
 ## GET /version
 
-### Description
-- Returns the current version of the application.
-
-### Example Request
-```http
-GET /version HTTP/1.1
-```
-
 ### Response
+- **200**: Returns the current version of the API.
+
 ```json
 {
-    "version": "0.1.0"
+    "version": "0.0.1"
 }
 ```
