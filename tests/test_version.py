@@ -1,13 +1,10 @@
+import requests
 import pytest
-from main import app
 
-@pytest.fixture
-def client():
-    with app.test_client() as client:
-        yield client
+BASE_URL = 'http://localhost:5000'  # Adjust accordingly
 
-
-def test_get_version(client):
-    response = client.get('/version')
+def test_version():
+    response = requests.get(f'{BASE_URL}/version')
     assert response.status_code == 200
-    assert response.json == {'version': '1.0.0'}
+    data = response.json()
+    assert data['version'] == "0.1.0"

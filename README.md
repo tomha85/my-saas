@@ -1,12 +1,16 @@
-# API Version
-
 ## GET /version
 
-Returns the current version of the API.
+### Description
+- Returns the current version of the application.
+
+### Example Request
+```http
+GET /version HTTP/1.1
+```
 
 ### Response
 ```json
-{"version":"0.1.0"}
+{
+    "version": "0.1.0"
+}
 ```
-
-E2E3 pipeline test.
