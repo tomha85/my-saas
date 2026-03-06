@@ -24,3 +24,4 @@ pytest test_version.py
 ```## Troubleshooting
 
 - If you encounter issues, check ...
+# Troubleshooting Section
