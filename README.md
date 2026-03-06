@@ -39,24 +39,33 @@ GET /version HTTP/1.1
 }
 ```
 
-## Common Issues
+## Troubleshooting
 
-### Connection Errors
-- If you encounter `Connection refused` or `Max retries exceeded` errors when running tests: ensure that the server is up and running on `localhost:5000`. You can start the server using the following command:
+### 1. Connection Errors
+- **Issue**: If you encounter `Connection refused` or `Max retries exceeded` errors when running tests.
+  - **Solution**: Ensure the server is running at `localhost:5000`. You can start the server using:
+    ```bash
+    python app.py
+    ```
 
-```
-# Example command to run the server
-python app.py
-```
+### 2. Attribute Errors
+- **Issue**: Attribute errors related to client setups in your tests.
+  - **Solution**: Verify that the `test_client` fixture is correctly defined and initialized in your test files.
 
-### Attribute Errors
-- If you see `AttributeError` related to client setups in your tests, check that the client fixture is properly defined and initialized in your test files.
+### 3. Testing Commands
+- **Issue**: Tests fail to run.
+  - **Solution**: Run the tests using:
+    ```bash
+    pytest -q
+    ```
 
-### Testing Commands
-- To run the tests, use the following command:
-```
-pytest -q
-```
+### 4. Missing dependencies
+- **Issue**: Import errors or any other Python package related issues.
+  - **Solution**: Ensure all dependencies listed in `requirements.txt` are installed by running:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-### Specific Test Failures
-- Review logs for details on specific test failures and ensure that relevant components are correctly set up.
+### 5. Specific Test Failures
+- **Issue**: Specific tests fail with unclear messages or log outputs.
+  - **Solution**: Review logs to identify the failing tests and ensure all relevant components are correctly set up.
