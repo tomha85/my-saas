@@ -7,7 +7,8 @@ def client():
         yield client
 
 
-def test_uptime(client):
+def test_uptime(test_client):
+    
     response = client.get('/uptime')
     assert "uptime_seconds" in response.json
     assert response.status_code == 200

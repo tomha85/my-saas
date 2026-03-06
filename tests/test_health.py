@@ -1,13 +1,10 @@
+import requests
 import pytest
-from app import app
 
-@pytest.fixture
-def client():
-    with app.test_client() as client:
-        yield client
+BASE_URL = 'http://localhost:5000'  # Update accordingly
 
-
-def test_health(client):
-    response = client.get('/health')
-    assert response.json == {'ok': True}
+def test_health():
+    response = requests.get(f'{BASE_URL}/health')
     assert response.status_code == 200
+    data = response.json()
+    assert data['ok'] is True
