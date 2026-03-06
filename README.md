@@ -60,3 +60,9 @@ pytest -q
 
 ### Specific Test Failures
 - Review logs for details on specific test failures and ensure that relevant components are correctly set up.
+
+## Troubleshooting
+
+- If the app fails to start, check logs and environment variables.
+- Confirm required services are running before retrying.
+- Verify configuration values and secrets are set correctly.
