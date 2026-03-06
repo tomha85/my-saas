@@ -36,3 +36,10 @@ GET /version HTTP/1.1
     "version": "1.0.0"
 }
 ```
+
+## Troubleshooting
+
+- If the app fails to start, check logs and environment variables.
+- Confirm required services are running before retrying.
+- Verify configuration values and secrets are set correctly.
+
